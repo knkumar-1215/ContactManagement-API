@@ -36,13 +36,6 @@ public class AuthenticationController : ControllerBase
     };
     private static int _nextId = 3;
 
-    // In any controller — temporary test
-    [HttpGet("test-exception")]
-    [AllowAnonymous]
-    public IActionResult TestException()
-    {
-        throw new Exception("Test exception");
-    }
 
     [HttpPost("Registration")]
     [AllowAnonymous]
@@ -137,7 +130,6 @@ public class AuthenticationController : ControllerBase
     private UserData? ValidateCredentialsForAuthentication(AuthenticationRequest data)
     {
         // NOTE: NOT PRODUCTION CODE
-        // Production: compare against hashed password
         if (string.IsNullOrWhiteSpace(data.Password) ||
             data.Password != "Test1234")
         {

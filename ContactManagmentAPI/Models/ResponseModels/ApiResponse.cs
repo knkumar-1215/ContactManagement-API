@@ -10,7 +10,7 @@ public class ApiResponse<T>
     public List<string> Errors { get; set; } = new List<string>();
     public string TraceId { get; set; }
 
-    // Add these two static methods
+   
     public static ApiResponse<T> Success(
         T data, string message, string traceId)
     {

@@ -61,7 +61,7 @@ public class ContactCRUDTest
             Phone = "1234567890"
         };
 
-        // LoadData returns list — FirstOrDefault picks the one
+       
         mockDb.Setup(db => db.LoadData<ContactModel, object>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
@@ -89,7 +89,7 @@ public class ContactCRUDTest
         mockConfig.Setup(c => c["ConnectionStrings:Default"])
                   .Returns("fake-connection-string");
 
-        // Empty list — FirstOrDefault returns null
+        
         mockDb.Setup(db => db.LoadData<ContactModel, object>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
@@ -114,7 +114,7 @@ public class ContactCRUDTest
         mockConfig.Setup(c => c["ConnectionStrings:Default"])
                   .Returns("fake-connection-string");
 
-        // Empty list — FirstOrDefault returns null
+        
         mockDb.Setup(db => db.LoadData<ContactModel, object>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
@@ -147,7 +147,7 @@ public class ContactCRUDTest
             Email = "naga@k.com",
             Phone = "1234567890"
         };
-        // Empty list — FirstOrDefault returns null
+        
         mockDb.Setup(db => db.LoadData<ContactModel, object>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
@@ -158,8 +158,7 @@ public class ContactCRUDTest
 
         // Act
         var result = repo.GetContactsByLastName("K");
-
-        // Assert
+     
         // Assert
         Assert.Single(result);
         Assert.Equal("K", result[0].LastName);
@@ -287,7 +286,7 @@ public class ContactCRUDTest
         mockConfig.Setup(c => c["ConnectionStrings:Default"])
                   .Returns("fake-connection-string");
 
-        // Mock LoadData — GetContactById needs this
+        
         mockDb.Setup(db => db.LoadData<ContactModel, object>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
@@ -325,7 +324,7 @@ public class ContactCRUDTest
         mockConfig.Setup(c => c["ConnectionStrings:Default"])
                   .Returns("fake-connection-string");
 
-        // Empty list — contact not found
+        
         mockDb.Setup(db => db.LoadData<ContactModel, object>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),

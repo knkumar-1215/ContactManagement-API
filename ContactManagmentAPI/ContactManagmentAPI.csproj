@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <Reference Include="DataAccessLibrary">
-      <HintPath>..\..\ContactManagementSystemApp\DataAccessLibrary\bin\Debug\net8.0\DataAccessLibrary.dll</HintPath>
+      <HintPath>..\..\..\ContactManagementSystemApp\DataAccessLibrary\bin\Debug\net8.0\DataAccessLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
 

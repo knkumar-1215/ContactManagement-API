@@ -65,7 +65,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-// Liveness — no auth, always healthy
+
+
 app.MapHealthChecks("/health/live",
     new HealthCheckOptions
     {

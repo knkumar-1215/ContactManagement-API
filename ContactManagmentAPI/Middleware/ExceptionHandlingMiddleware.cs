@@ -23,7 +23,7 @@ public class ExceptionHandlingMiddleware
         }
         catch (Exception ex)
         {
-            // log full details
+            
             _logger.LogError(ex,
                 "Unhandled exception on {Method} {Path}",
                 context.Request.Method,

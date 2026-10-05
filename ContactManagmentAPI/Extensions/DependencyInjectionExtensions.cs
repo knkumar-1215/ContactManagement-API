@@ -20,7 +20,7 @@ public static class DependencyInjectionExtensions
     public static void AddStandardServices(
     this WebApplicationBuilder builder)
     {
-        // Only call AddControllers once with options
+        
         builder.Services.AddControllers(opts =>
         {
             opts.Filters.Add<LoggingFilter>();
@@ -37,7 +37,7 @@ public static class DependencyInjectionExtensions
                 opts.SuppressModelStateInvalidFilter = true;
             });
 
-        // Add this to handle 403 responses
+        // To handle 403 responses
         builder.Services.Configure<ApiBehaviorOptions>(opts =>
         {
             opts.InvalidModelStateResponseFactory = context =>
@@ -78,10 +78,9 @@ public static class DependencyInjectionExtensions
     {
         builder.Services.AddRateLimiter(options =>
         {
-            // Return HTTP 429 instead of HTTP 503
+            
             options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
 
-            // Optional: Return a custom JSON message for 429 responses
             options.OnRejected = async (context, token) =>
             {
                 context.HttpContext.Response.StatusCode = 429;

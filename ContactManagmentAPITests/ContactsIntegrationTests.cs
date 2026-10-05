@@ -20,7 +20,7 @@ public class ContactsIntegrationTests
    
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
-        PropertyNameCaseInsensitive = true  // handles both cases
+        PropertyNameCaseInsensitive = true  
     };
     // Helper — gets JWT token for a user
     private async Task<string> GetTokenAsync(
